@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#navbar-pinterest {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.finder {
+    width: 250px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    background-color: #f2f2f2;
+}
+
+#notifications, #message, #profile-img {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    margin: 0 5px;
+    border-radius: 50%;
+}
+
+#content {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+#pinterest-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url("pinterest-icon.png");
+    background-size: cover;
+}
+
+.card-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background-color: #f2f2f2;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card-image:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para los botones al hacer hover en la tarjeta de imagen */
+.card-image:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.card-image:hover::before {
+    opacity: 1;
+}
+
+/* Añade aquí tus estilos para los botones dentro de .card-image:hover::before */
